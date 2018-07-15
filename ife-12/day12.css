@@ -14,9 +14,9 @@ html,body {
 }
 
 .container {
-    overflow: hidden;
     display: flex;
-    width: 100%;
+    width: 100vw;
+    height: 100vh;
 }
 
 .first-col {
@@ -33,7 +33,10 @@ html,body {
 }
 
 .thrid-col {
+    position: relative;
     flex: auto;
+    width:calc(100% - 350px);
+    height: 100%;
 }
 
 .tip1 {
@@ -214,7 +217,7 @@ h2 {
 }
 
 .admin {
-    position: fixed;
+    position: absolute;
     top: 10px;
     right: 20px;
     width: 200px;
@@ -271,7 +274,10 @@ h2 {
  
 .thrid-container {
     display: flex;
+    position: absolute;
+    top: 130px;
     width: 100%;
+    height: calc(100% - 130px);
 }
 
 .admin img {
@@ -281,19 +287,23 @@ h2 {
 }
 
 .col-left {
-    overflow: auto;
+    overflow: scroll;
     width: 400px;
-    border-right: 1px solid #e6e9ec;
 }
 
 .col-right {
-    overflow: auto;
+    overflow: scroll;
     position: relative;
     flex: auto;
-    
+    padding-bottom: 90px;
+    border-left: 1px solid #e6e9ec;
 }
 
 .search {
+    position: absolute;
+    top: 70px;
+    left: 0;
+    width: 400px;
     height: 60px;
     border-bottom: 1px solid #e6e9ec;
     text-align: center;
@@ -426,9 +436,11 @@ input::placeholder {
 }
 
 .nav1 {
-    position: relative;
-    width: 100%;
+    position: absolute;
+    left: 400px;
+    width: calc(100% - 400px);
     height: 60px;
+    border-left: 1px solid #e6e9ec;
     border-bottom: 1px solid #e6e9ec;
     line-height: 60px;
 }
@@ -534,7 +546,7 @@ h3 {
     background: url(images/right.png) no-repeat center;
 }
 
-.chat-container {
+.chat-container1 {
     position: absolute;
     margin-left: 5%;
     width: 90%; 
@@ -572,9 +584,9 @@ h3 {
    color: #6e737c;
 }
 
-.chat-container1 {
+.chat-container2 {
     position: absolute;
-    top: 180px;
+    top: 120px;
     margin-left: 5%;
     width: 90%; 
 }
@@ -598,28 +610,28 @@ h3 {
 
 .chat-container3 {
     position: absolute;
-    top: 415px;
+    top: 350px;
     margin-left: 5%;
     width: 90%; 
 }
 
 .chat-container4 {
     position: absolute;
-    top: 530px;
+    top: 470px;
     margin-left: 5%;
     width: 90%; 
 }
 
 .line1 {
     position: absolute;
-    top: 390px;
+    top: 330px;
     width: 100%;
     border: .5px solid #ced0da;
 }
 
 .line1-text {
     position: absolute;
-    top: 395px;
+    top: 335px;
     left: 45%;
     padding: 0 15px;
     background: #fff;
@@ -656,7 +668,7 @@ h3 {
  
 .line2 {
     position: absolute;
-    top: 850px;
+    top: 800px;
     left: 0;
     width: 100%;
     border: .5px solid #1c94ee;
@@ -664,7 +676,7 @@ h3 {
 
 .line2-text {
     position: absolute;
-    top: 855px;
+    top: 805px;
     left: 40%;
     padding: 0 15px;
     background: #fff;
@@ -673,23 +685,30 @@ h3 {
 
 .chat-container5 {
     position: absolute;
-    top: 870px;
+    top: 820px;
     margin-left: 5%;
     width: 90%; 
 }
 
-.chat-content {
+.chat-container6 {
     position: absolute;
-    top: 1010px;
-    left: 7%;
-    margin-bottom: 20px;
-    width: 90%;
-    height: 45px;
+    top: 940px;
+    width: 100%;
+    height: 90px;
+}
+
+.chat-content {
+    position: fixed;
+    bottom: 0;
+    right: 10px;
+    width: calc(100% - 780px);
+    height: 90px;
+    background: #fff;
 }
 
 .add {
     position: absolute;
-    top: 0;
+    top: 22px;
     left: 0;
     width: 45px;
     height: 45px;
@@ -703,7 +722,7 @@ h3 {
 
 .chat-content input {
     position: absolute;
-    top: 0;
+    top: 22px;
     left: 45px;
     padding: 0 15px;
     width: 92%;

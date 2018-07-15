@@ -1,0 +1,717 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+/*消除滚动条*/
+*::-webkit-scrollbar {
+    display:none;
+}
+
+html,body {
+    width: 100%;
+    height: 100%;
+}
+
+.container {
+    overflow: hidden;
+    display: flex;
+    width: 100%;
+}
+
+.first-col {
+    width: 100px;
+    background: #1d2531;
+}
+
+.second-col {
+    padding: 20px 20px 0 20px;
+    width: 250px;
+    line-height: 2.2;
+    font-size: 12px;
+    background: #222c3c;
+}
+
+.thrid-col {
+    flex: auto;
+}
+
+.tip1 {
+    position: absolute;
+    top: 30px;
+    width: 1px;
+    border: 1px solid #1c94ee;
+}
+
+.tip2 {
+    position: absolute;
+    top: 395px;
+    left: 100px;
+    width: 1px;
+    border: 1px solid #1c94ee;
+}
+
+.message {
+    position: absolute;
+    left: 300px;
+    width: 25px;
+    height: 20px;
+    border-radius: 42%;
+    line-height: 20px;
+    text-align: center;
+    background: #1c94ee;
+    color: #fff;
+}
+
+#message54 {
+    top: 75px;
+}
+
+#message21 {
+    top: 400px;
+}
+
+#warn {
+    top: 450px;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background: #db391c;
+}
+
+.item {
+    position: fixed;
+    left: 20px;
+    list-style: none;
+}
+
+.item li {
+    margin-top: 15px;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+}
+
+#item1 {
+    background: #1c94ee url(images/item1.png) no-repeat center center;
+}
+
+#item2 {
+    background: #8260e6 url(images/item2.png) no-repeat center center;
+}
+
+#item3 {
+    background: #d12e11 url(images/item3.png) no-repeat center center;
+}
+
+#item4 {
+    border: 3px solid #2d3848;
+    background: url(images/plus.png) no-repeat center center;
+}
+
+.bottom1 {
+    display: inline-block;
+    position: fixed;
+    left: 20px;
+    bottom: 15px;
+}
+
+.bottom1 li{
+    display: inline-block;
+    width: 25px;
+    height: 25px;
+}
+
+#item5 {
+    background: url(images/grid.png) no-repeat center center;
+}
+
+#item6 {
+    background: url(images/settings.png) no-repeat center center;
+}
+
+h4 {
+    background: url(images/settings.png) no-repeat right center;
+    font-weight: normal;
+    color: #5b6779;    
+}
+
+.title {
+    list-style: none;
+    color: #b7c0cd;
+}
+
+.product li {
+    padding-left: 25px;
+}
+
+.product li:nth-child(1) {
+    background: url(images/book.png) no-repeat left center; 
+}
+
+.product li:nth-child(2) {
+    background: url(images/video.png) no-repeat left center; 
+}
+
+.product li:nth-child(3) {
+    background: url(images/painting.png) no-repeat left center; 
+}
+
+.product li:nth-child(4) {
+    background: url(images/chart.png) no-repeat left center; 
+}
+
+hr {
+    margin: 15px 0;
+    border: 1px solid #2a3547;
+}
+
+.bottom2 {
+    display: inline-block;
+    position: fixed;
+    bottom: 15px;
+    color: #fff;
+}
+
+.bottom2 li{
+    display: inline-block;
+}
+
+.bottom2 li:nth-child(2) {
+    position: absolute;
+    right: 0;
+}
+
+#bar1 {
+    position: absolute;
+    bottom: 0;
+    width: 40px;
+    height: 4px;
+    background-image: -moz-linear-gradient( 0deg, rgb(127,91,230) 1%, rgb(157,143,227) 100%);
+    background-image: -webkit-linear-gradient( 0deg, rgb(127,91,230) 1%, rgb(157,143,227) 100%);
+    background-image: -o-linear-gradient( 0deg, rgb(127,91,230) 1%, rgb(157,143,227) 100%);
+    background-image: linear-gradient( 0deg, rgb(127,91,230) 1%, rgb(157,143,227) 100%);
+}
+
+#bar2 {
+    width: 190px;
+    height: 4px;
+    background-color: rgb(71, 83, 100);
+    opacity: 0.302;
+}
+
+.nav {
+    position: relative;
+    width: 100%;
+    height: 70px;
+    border-bottom: 1px solid #e6e9ec;
+    line-height: 70px;
+}
+
+h2 {
+    padding-left: 25px;
+    font-weight: normal;
+}
+
+.admin {
+    position: fixed;
+    top: 10px;
+    right: 20px;
+    width: 200px;
+    height: 50px;
+    background: #fff;
+    z-index: 100;
+}
+
+.face {
+    position: relative;
+    width: 46px;
+    height: 46px;
+    border-radius: 50%; 
+}
+
+#face8 {
+    background: url(images/face8.png) no-repeat center center;
+}
+
+.cricle1 {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background: #fff;
+}
+
+.cricle2 {
+    position: absolute;
+    right: 3px;
+    bottom: 3px;
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    border: 3px solid #38a76a;
+}
+
+.admin .name {
+    position: absolute;
+    top: -20px;
+    right: 70px;
+    color: #2399f1;
+}
+
+.admin .identity {
+    position: absolute;
+    top: 0;
+    right: 45px;
+    font-size: 14px;
+    color: #b5b5b5;
+}
+ 
+.thrid-container {
+    display: flex;
+    width: 100%;
+}
+
+.admin img {
+    position: absolute;
+    right: 0;
+    top: 25px;
+}
+
+.col-left {
+    overflow: auto;
+    width: 400px;
+    border-right: 1px solid #e6e9ec;
+}
+
+.col-right {
+    overflow: auto;
+    position: relative;
+    flex: auto;
+    
+}
+
+.search {
+    height: 60px;
+    border-bottom: 1px solid #e6e9ec;
+    text-align: center;
+    line-height: 60px;
+}
+/*搜索框*/
+.search input {
+    padding-left: 10px;
+    width: 80%;
+    height: 60%;
+    border: 1px solid #e6e9ec;
+    border-radius: 5px;
+    outline: none;
+    background: url(images/search.png) no-repeat 95% center;
+}
+
+input::placeholder {
+    color: #ccc;
+}
+
+.person {
+    position: relative;
+    padding: 15px 25px;
+    width: 100%;
+    height: 130px;
+    border-bottom: 1px solid #e6e9ec;
+}
+
+#person {
+    border-left: 4px solid #1c94ee;
+}
+
+.picture {
+    position: relative;
+    width: 100%;
+    height: 50px;
+}
+
+#face1 {
+    background: url(images/face1.png) no-repeat center center;
+}
+
+#face2 {
+    background: url(images/face2.png) no-repeat center center;
+}
+
+#face3 {
+    background: url(images/face3.png) no-repeat center center;
+}
+
+#face4 {
+    background: url(images/face4.png) no-repeat center center;
+}
+
+#face5 {
+    background: url(images/face5.png) no-repeat center center;
+}
+
+#face6 {
+    background: url(images/face6.png) no-repeat center center;
+}
+
+#face7 {
+    background: url(images/face7.png) no-repeat center center;
+}
+
+.cricle3 {
+    position: absolute;
+    top: 10px;
+    left: 65px;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: #1c94ee;
+}
+
+#person1 .name {
+    position: absolute;
+    top: 5px;
+    left: 85px;
+    color: #1c94ee;
+}
+
+.picture .identity {
+    position: absolute;
+    top: 28px;
+    left: 65px;
+    font-size: 14px;
+    color: #b5b5b5;
+}
+
+.picture .time {
+    position: absolute;
+    top: 5px;
+    right: 0;
+    font-size: 14px;
+    color: #7f8fa4;
+}
+
+#person .describe {
+    margin-top: 10px;
+    width: 300px;
+    font-size: 12px;
+    color: #585d68;
+}
+
+.message4 {
+    position: absolute;
+    right: 25px;
+    bottom: 25px;
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    text-align: center;
+    line-height: 25px;
+    background: #1c94ee;
+    color: #fff;
+}
+
+.picture .name {
+    position: absolute;
+    top: 5px;
+    left: 65px;
+}
+
+.describe {
+    margin-top: 10px;
+    font-size: 12px;
+    color: #585d68;
+}
+
+.nav1 {
+    position: relative;
+    width: 100%;
+    height: 60px;
+    border-bottom: 1px solid #e6e9ec;
+    line-height: 60px;
+}
+
+h3 {
+    display: inline;
+    margin-left: 20px;
+    font-weight: normal;
+    color: #585d68;
+}
+
+.cricle4 {
+    display: inline-block;
+    margin-left: 5px;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: #1bb934;
+}
+
+.sign {
+    position: absolute;
+    top: 15px;
+    right: 200px;
+    display: inline-block;
+    height: 31px;
+    font-size: 0;
+    line-height: 31px;
+    text-align: center;
+    border: 1px solid #ced0da;
+    border-radius: 4px;
+    background-image: -webkit-linear-gradient( 90deg, rgb(241,243,247) 0%, rgb(255,255,255) 100%);
+    background-image: -moz-linear-gradient( 90deg, rgb(241,243,247) 0%, rgb(255,255,255) 100%);
+    background-image: linear-gradient( 90deg, rgb(241,243,247) 0%, rgb(255,255,255) 100%);    
+}
+
+.sign li{
+    display: inline-block;
+    width: 35px;
+    height: 30px; 
+}
+
+.sign li:nth-child(1) {
+    background: url(images/user.png) no-repeat center;
+    border-right: 1px solid #ced0da;
+}
+
+.sign li:nth-child(2) {
+    background: url(images/upload.png) no-repeat center;
+    border-right: 1px solid #ced0da;
+}
+
+.sign li:nth-child(3) {
+    background: url(images/trash.png) no-repeat center;
+}
+  
+.nav1 table {
+    position: absolute;
+    top: 15px;
+    right: 175px;
+    height: 30px;
+    border-right: 1px solid #ced0da;
+}
+
+.nav1 td {
+    vertical-align: top;
+}
+
+.nav1 span {
+    position: absolute;
+    right: 105px;
+    color: #585d68;
+}
+
+.sign1 {
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    display: inline-block;
+    height: 31px;
+    font-size: 0;
+    line-height: 31px;
+    text-align: center;
+    border: 1px solid #ced0da;
+    border-radius: 4px;
+    background-image: -webkit-linear-gradient( 90deg, rgb(241,243,247) 0%, rgb(255,255,255) 100%);
+    background-image: -moz-linear-gradient( 90deg, rgb(241,243,247) 0%, rgb(255,255,255) 100%);
+    background-image: linear-gradient( 90deg, rgb(241,243,247) 0%, rgb(255,255,255) 100%);
+}
+
+.sign1 li{
+    display: inline-block;
+    width: 35px;
+    height: 30px; 
+}
+
+.sign1 li:nth-child(1) {
+    background: url(images/left.png) no-repeat center;
+    border-right: 1px solid #ced0da;
+}
+
+.sign1 li:nth-child(2) {
+    background: url(images/right.png) no-repeat center;
+}
+
+.chat-container {
+    position: absolute;
+    margin-left: 5%;
+    width: 90%; 
+}
+
+#head-pic1 {
+    position: absolute;
+    top: 20px;
+    left: 0;
+    width: 46px;
+    height: 46px;
+    border-radius: 50%;
+    background: url(images/face1.png) no-repeat center;
+}
+
+.chat span:nth-child(1) {
+    position: absolute;
+    top: 20px;
+    left: 60px;
+    color: #585d68;
+}
+
+#time1 {
+    position: absolute;
+    top: 20px;
+    left: 160px;
+    color: #909eb0;
+}
+
+.chat p {
+   position: absolute;
+   top: 50px;
+   left: 60px;
+   font-size: 12px;
+   color: #6e737c;
+}
+
+.chat-container1 {
+    position: absolute;
+    top: 180px;
+    margin-left: 5%;
+    width: 90%; 
+}
+
+#head-pic2 {
+    position: absolute;
+    top: 20px;
+    left: 0;
+    width: 46px;
+    height: 46px;
+    border-radius: 50%;
+    background: url(images/face8.png) no-repeat center;
+}
+
+#time2 {
+    position: absolute;
+    top: 20px;
+    left: 185px;
+    color: #909eb0;
+}
+
+.chat-container3 {
+    position: absolute;
+    top: 415px;
+    margin-left: 5%;
+    width: 90%; 
+}
+
+.chat-container4 {
+    position: absolute;
+    top: 530px;
+    margin-left: 5%;
+    width: 90%; 
+}
+
+.line1 {
+    position: absolute;
+    top: 390px;
+    width: 100%;
+    border: .5px solid #ced0da;
+}
+
+.line1-text {
+    position: absolute;
+    top: 395px;
+    left: 45%;
+    padding: 0 15px;
+    background: #fff;
+    color: #a1adbc;
+}
+
+.photo1 {
+    position: absolute;
+    top: 210px;
+    left: 60px;
+    width: 156px;
+    height: 100px;
+    background: url(images/photo1.png);
+}
+
+.photo2 {
+    position: absolute;
+    top: 210px;
+    left: 230px;
+    width: 156px;
+    height: 100px;
+    background: url(images/photo2.png);
+}
+
+.open {
+    position: absolute;
+    top: 25px;
+    left: 53px;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, .3) url(images/open.png) no-repeat center;
+}
+ 
+.line2 {
+    position: absolute;
+    top: 850px;
+    left: 0;
+    width: 100%;
+    border: .5px solid #1c94ee;
+}
+
+.line2-text {
+    position: absolute;
+    top: 855px;
+    left: 40%;
+    padding: 0 15px;
+    background: #fff;
+    color: #1c94ee;
+}
+
+.chat-container5 {
+    position: absolute;
+    top: 870px;
+    margin-left: 5%;
+    width: 90%; 
+}
+
+.chat-content {
+    position: absolute;
+    top: 1010px;
+    left: 7%;
+    margin-bottom: 20px;
+    width: 90%;
+    height: 45px;
+}
+
+.add {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 45px;
+    height: 45px;
+    border: 1px solid #ced0da;
+    border-radius: 4px 0 0 4px; 
+    background: -webkit-linear-gradient( 90deg, rgb(241,243,247) 0%, rgb(255,255,255) 100%);
+    background-image: -moz-linear-gradient( 90deg, rgb(241,243,247) 0%, rgb(255,255,255) 100%);
+    background-image: linear-gradient( 90deg, rgb(241,243,247) 0%, rgb(255,255,255) 100%);
+    background: url(images/add.png) no-repeat center;
+}
+
+.chat-content input {
+    position: absolute;
+    top: 0;
+    left: 45px;
+    padding: 0 15px;
+    width: 92%;
+    height: 45px;
+    outline: none;
+    border: 1px solid #dfe3e9;
+    border-left: none;
+    border-radius: 0 4px 4px 0;
+    color: #6e737c;
+}
+  

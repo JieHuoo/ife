@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">    
+    <title>九九乘法表</title>
+</head>
+<body> 
+    <h1>九九乘法表</h1>
+    <table id="t"></table>
+    <script>
+        //document.write("<table>");
+        var one = document.getElementById("t");
+        for(var i = 1; i <= 9; i++) {
+            //document.write("<tr>");
+            var two = document.createElement("tr");
+            for(var j = 1; j <= 9; j++) {
+                //document.write("<td>" + j + "*" + i + "=" + i * j + "</td>"); 
+                var three = document.createElement("td");
+                var text = document.createTextNode(j + "*" + i + "=" + i * j);
+                three.appendChild(text);
+                two.appendChild(three);
+                three.style.width = "70px";
+                three.style.border = "1px solid #000";
+            }
+            //document.write("</tr>");
+            one.appendChild(two);
+        }
+        //document.write("</table>");
+    </script>
+</body>

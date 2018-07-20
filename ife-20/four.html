@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">    
+    <title>IFE ECMAScript</title>
+    
+</head>
+<body>            
+    <div id="fade-obj" style="width:300px;height:300px;background:#000"></div>
+    <button id="fade-btn">淡出</button>
+
+    <script>
+        var obj = document.getElementById("fade-obj");
+        var btn = document.getElementById("fade-btn");
+        var id;//定义计时器的id
+        var seed = 1;//obj的透明度
+        /*setTimeout实现*/
+        /*function fadeOut() {
+            obj.style.opacity = seed;
+            seed = seed - 0.01;
+            btn.disabled = true;
+            if(seed > 0) {
+                setTimeout(fadeOut,10);
+            } else {
+                btn.disabled = false;
+                btn.innerHTML = "淡入";
+            }
+        }
+        function fadeIn() {
+            obj.style.opacity = seed;
+            seed = seed + 0.01;
+            btn.disabled = true;
+            if(seed < 1) {
+                setTimeout(fadeIn,10);
+            } else {
+                btn.disabled = false;
+                btn.innerHTML = "淡出";
+            }
+        }
+        btn.addEventListener('click',fadeOut);
+        btn.addEventListener('click',fadeIn);*/
+        /*setInterval实现*/
+        btn.addEventListener('click',function() {
+            if(btn.innerHTML == "淡出") {
+                id = setInterval(function() {
+                    obj.style.opacity = seed;
+                    //计算机计算结果与预期结果有点偏差，使用四舍五入法来减少偏差
+                    seed = Math.round((seed - 0.01)*100)/100;
+                    btn.disabled = true;
+                    //console.log(seed);
+                    if(seed === 0) {
+                        btn.disabled = false;
+                        btn.innerHTML = "淡入";
+                        clearInterval(id);  
+                    }
+                },10);  
+            } else {
+                id = setInterval(function() {
+                    obj.style.opacity = seed;
+                    seed = Math.round((seed + 0.01)*100)/100;
+                    btn.disabled = true;
+                    //console.log(seed);
+                    if(seed === 1) {
+                        btn.disabled = false;
+                        btn.innerHTML = "淡出";
+                        clearInterval(id);  
+                    }
+                },10);  
+            }     
+        })
+    </script>
+</body>
+</html>

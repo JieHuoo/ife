@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>IFE ECMAScript</title>
+    <style>
+    div {
+        margin: 10px auto;
+        width: 480px;
+        height: 480px;
+        background-image: url(erik.jpg);
+        background-repeat: no-repeat;
+        background-position-y: 0;
+    }
+    </style>
+</head>
+<body>
+    <div></div>
+    <script>
+        var con = document.querySelector("div");
+        var pos = 0,pos1 = -7680;
+        var id,id1;
+        
+        window.onload = function() {
+            id = setInterval(function(){
+                con.style.backgroundPositionY = pos + "px";
+                pos = pos - 480;
+                if(pos < -7680) {
+                    clearInterval(id);
+                    id1 = setInterval(function(){
+                        con.style.backgroundPositionY = pos1 + "px";
+                        pos1 = pos1 + 480;
+                        if(pos1 > 0) {
+                            clearInterval(id1);
+                        }
+                    },100);
+                }
+            },100);          
+        }
+        
+
+        
+    </script>
+</body>
+</html>

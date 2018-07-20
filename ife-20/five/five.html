@@ -18,9 +18,10 @@
     <div></div>
     <script>
         var con = document.querySelector("div");
-        var pos = 0,pos1 = -7680;
-        var id,id1;
-        
+        var pos = 0;
+        var change = true;
+        /*缺陷版本，动画只能播放一遍，不能重复，方法不简便*/
+        /*var pos1 = -7680, id, id1;
         window.onload = function() {
             id = setInterval(function(){
                 con.style.backgroundPositionY = pos + "px";
@@ -36,10 +37,22 @@
                     },100);
                 }
             },100);          
+        }*/
+        /*改进之后的版本*/
+        function face() {
+            con.style.backgroundPositionY = pos + "px";
+            if(change) {
+                pos -= 480;
+            } else {
+                pos += 480;
+            }
+            if(pos == 0 || pos == -7680) {
+                change = !change;
+            }
         }
-        
-
-        
+        window.onload = function() {
+            setInterval(face,100);
+        }    
     </script>
 </body>
 </html>

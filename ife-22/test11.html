@@ -17,18 +17,24 @@
     [8, "Area2-2-1", 6],
 ];
     function becomeObj(arr) {
-        var scoreArray = [];
-        for(var i in obj) {
-            var arr = [];
-            arr.push(i);
-            for(var j in obj[i]) {
-                arr.push(obj[i][j]);
+        let obj = {0:{}};
+        for (let i=0;i<arr.length;i++) {
+            let menu = arr[i];
+            obj[menu[0]] = {"name":menu[1]};
+            if (menu[2] == -1) {
+                obj[0][menu[0]] = obj[menu[0]];
+            } else {
+                if (obj[menu[2]]["subMenu"]) {
+                    obj[menu[2]]["subMenu"][menu[0]] = obj[menu[0]];
+                } else {
+                    obj[menu[2]]["subMenu"] = {};
+                    obj[menu[2]]["subMenu"][menu[0]] = obj[menu[0]];
+                }
             }
-            scoreArray.push(arr);
         }
-        console.log(scoreArray);
+        console.log(obj["0"]);   
     }
-    becomeArr(scoreObject);
+    becomeObj(menuArr);
     </script>
 </body>
 </html>

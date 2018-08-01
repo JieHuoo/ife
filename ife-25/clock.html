@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>clock</title>
+</head>
+<body>
+    <div id="clock"></div>
+    <input id="time" placeholder="输入格式为xxxx-xx-xx的日期"></input>
+    <p id="result"></p>
+    <button id="btn">提交</button>
+    <script> 
+        var weeks = ["日","一","二","三","四","五","六"]; 
+        var weeks1 = ["Sunday", "Monday", "Tuesday", "Wednesday", 
+                        "Thursday", "Friday", "Saturday"];
+
+        function startTime() {
+            var date = new Date();
+            var year = date.getFullYear();
+            var month = date.getMonth()+1;
+            var day = date.getDate();
+            var week = date.getDay();
+            var week1 = date.getDay();
+            var hour = date.getHours();
+            var minute = date.getMinutes();
+            var second = date.getSeconds();
+
+            week = checkWeek(week);
+            week1 = checkWeek1(week1);
+            month = checkTime(month);
+            day = checkTime(day);
+            hour = checkTime(hour);
+            hour1 = hour>12?hour1=hour-12:hour;
+            minute  = checkTime(minute);
+            second = checkTime(second);
+
+            document.getElementById("clock").innerHTML = 
+            year+"年"+month+"月"+day+"日"+"星期"+week+hour+":"+minute+":"+second+"<br>"+"<br>"+
+            year+"-"+month+"-"+day+" "+week1+" "+hour1+":"+minute+":"+second+" "+timeChange(hour);
+        }
+
+        window.setInterval(startTime,1000);
+        change();
+
+        //出现个位数情况前面补0
+        function checkTime(i) {
+            if(i<10) {
+                i = "0" + i;
+            }
+            return i;
+        }
+        
+        //转换星期显示格式
+        function checkWeek(week) {
+            for(var i=0; i<7; i++) {
+                if(week === i) {
+                    week = weeks[i];
+                }
+            }
+            return week;
+        }
+
+        //另一种星期转化
+        function checkWeek1(week) {
+            for(var i=0; i<7; i++) {
+                if(week === i) {
+                    week = weeks1[i];
+                }
+            }
+            return week;
+        }
+
+        //根据某个日期返回这天是星期几
+        function change() {
+            var time = document.getElementById("time");
+            var result = document.getElementById("result");
+            var btn = document.getElementById("btn");
+            var r = new RegExp(/^(\d{4})-(\d{2})-(\d{2})$/);
+            btn.onclick = function() {
+                if(!r.test(time.value)) {
+                    console.log("日期格式不正确！");
+                    return false;
+                } else {
+                    result.innerHTML = "星期" + checkWeek(new Date(time.value).getDay());
+                }   
+            }
+        }
+
+        function timeChange(i) {
+            str = "";
+            if(i > 12) {
+                str = "PM";
+            } else {
+                str = "AM";
+            }
+            return str;
+        }
+        
+    </script>
+</body>
+</html>

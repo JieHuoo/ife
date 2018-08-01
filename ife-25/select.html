@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>select</title>
+</head>
+<body>
+    <div class="box">
+    <select id="year-select">
+        <option value="">选择年</option>
+    </select>
+            
+    <select id="month-select">
+        <option value="">选择月</option>
+    </select>
+            
+    <select id="day-select">
+        <option value="">选择日</option>
+    </select>
+            
+    <select id="hour-select">
+        <option value="">选择时</option>
+    </select>
+            
+    <select id="minite-select">
+        <option value="">选择分</option>
+    </select>
+            
+    <select id="second-select">
+        <option value="">选择秒</option>
+    </select>
+    </div>
+            
+    <p id="result-wrapper">现在距离 2001年1月1日星期X HH:MM:SS 还有 X 天 X 小时 X 分 X 秒</p>
+    
+    <script>
+        var weeks = ["日","一","二","三","四","五","六"];
+        var year = document.getElementById("year-select");
+        var month = document.getElementById("month-select");
+        var day = document.getElementById("day-select");
+        var hour = document.getElementById("hour-select");
+        var minute = document.getElementById("minite-select");
+        var second = document.getElementById("second-select");
+        var box = document.getElementById("box");
+
+        function createOption() {
+            //生成年选项
+            for(var i=2000; i<=2032; i++) {
+                var option = document.createElement("option");
+                option.setAttribute("value", i);
+                option.innerHTML = i;
+                year.appendChild(option);
+            }
+            //生成月选项
+            for(var i=1; i<=12; i++) {
+                var option = document.createElement("option");
+                option.setAttribute("value", i);
+                option.innerHTML = i;
+                month.appendChild(option);
+            }
+            //生成日选项
+            for(var i=1; i<=31; i++) {
+                var option = document.createElement("option");
+                option.setAttribute("value", i);
+                option.innerHTML = i;
+                day.appendChild(option);
+            }
+            //生成时选项
+            for(var i=0; i<24; i++) {
+                var option = document.createElement("option");
+                option.setAttribute("value", i);
+                option.innerHTML = checkTime(i);
+                hour.appendChild(option);
+            }
+            //生成分选项
+            for(var i=0; i<60; i++) {
+                var option = document.createElement("option");
+                option.setAttribute("value", i);
+                option.innerHTML = checkTime(i);
+                minute.appendChild(option);
+            }
+            //生成秒选项
+            for(var i=0; i<60; i++) {
+                var option = document.createElement("option");
+                option.setAttribute("value", i);
+                option.innerHTML = checkTime(i);
+                second.appendChild(option);
+            }
+        }
+
+        createOption();
+        var days;
+
+        //显示默认值
+        year.onclick = function() {
+            month.options[0].selected = true;
+            day.options[0].selected = true;
+        }
+        
+        //月份点击
+        month.onclick = function(){
+            day.options[0].selected = true;
+            //计算天数的显示范围
+            if(month.value == 2){
+                if((year.value % 4 === 0 && year.value % 100 !== 0)  || year.value % 400 === 0){
+                    days = 29;
+                }else{
+                    days = 28;
+                }
+            }else if(month.value == 4 || month.value == 6 || month.value == 9 || month.value == 11){
+                days = 30;
+            }else{
+                days = 31;
+            }
+            //增加或删除天数
+            if(days == 28){
+                day.remove(31);
+                day.remove(30);
+                day.remove(29);
+            }
+            if(days == 29){
+                day.remove(31);
+                day.remove(30);
+                if(!day.options[29]){
+                    day.add(new Option('29','29'),undefined)
+                }
+            }
+            if(days == 30){
+                day.remove(31);
+                if(!day.options[29]){
+                    day.add(new Option('29','29'),undefined)
+                }
+                if(!day.options[30]){
+                    day.add(new Option('30','30'),undefined)
+                }
+            }
+            if(days == 31){
+                if(!day.options[29]){
+                    day.add(new Option('29','29'),undefined)
+                }
+                if(!day.options[30]){
+                    day.add(new Option('30','30'),undefined)
+                }
+                if(!day.options[31]){
+                    day.add(new Option('31','31'),undefined)
+                }
+            }
+        }
+        
+        //出现个位数情况前面补0
+        function checkTime(i) {
+            if(i<10) {
+                i = "0" + i;
+            }
+            return i;
+        }
+
+        //转换星期显示格式
+        function checkWeek(week) {
+            for(var i=0; i<7; i++) {
+                if(week === i) {
+                    week = weeks[i];
+                }
+            }
+            return week;
+        }
+        
+    </script>
+</body>
+</html>

@@ -13,13 +13,13 @@
         */
         function diyTrim(str) {
             var result = "";
-            for(var i=0;i<str.length;i++) {
+            for(var i=0, len=str.length; i<len; i++) {
                 //区分全角半角空格
                 //方法一
                 if(str.indexOf(" ") === 0 || str.indexOf("　") === 0) {
                     str = str.slice(1);
                 } else if(str.lastIndexOf(" ") === str.length-1 || str.lastIndexOf("　") === str.length-1) {
-                    str = str.slice(0,str.length-2);
+                    str = str.slice(0,str.length-1);
                 } else {
                     break;
                 }
@@ -27,15 +27,18 @@
                 /*if(str[0]==" "||str[0]=="　") {
                     str = str.slice(1);
                 } else if(str[str.length-1]==" "||str[str.length-1]=="　") {
-                    str = str.slice(0,str.length-2);
+                    str = str.slice(0,str.length-1);
                 } else {
                     break;
                 }*/
             }
+            //方法三，有些浏览器不支持
+                /*
+                str = str.trim();
+                */
             result = str;
-            return result;
+            return result.length;
         }
-
         // 测试用例
         console.log(diyTrim(' a f b    ')); // ->a f b
         console.log(diyTrim('    ffdaf    ')); // ->ffdaf
@@ -45,7 +48,6 @@
         console.log(diyTrim(' ')); // ->
         console.log(diyTrim('　')); // ->
         console.log(diyTrim('')); // ->
-
         /*
         去掉字符串str中，连续重复的地方
         */
